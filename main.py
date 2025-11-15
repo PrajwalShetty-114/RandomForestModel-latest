@@ -104,3 +104,9 @@ async def make_prediction(input_data: PredictionInput):
 @app.get("/")
 def read_root():
     return {"message": "Random Forest Speed Prediction API is running!"}
+
+
+if __name__ == "__main__":
+    import os, uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
