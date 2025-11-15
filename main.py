@@ -106,6 +106,11 @@ def read_root():
     return {"message": "Random Forest Speed Prediction API is running!"}
 
 
+@app.get("/health")
+def health():
+    return {"status":"ok"}
+
+
 if __name__ == "__main__":
     import os, uvicorn
     port = int(os.environ.get("PORT", 8000))
